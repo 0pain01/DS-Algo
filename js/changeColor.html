@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            div{
+                width: 150px;
+                height: 150px;
+                border-color: green;
+                background-color: rgb(218, 64, 218);
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dv" onclick="changeColor()"></div>
+        <script>
+            var counter = 0;
+            low=0;
+            high=15;
+            var cc='0123456789ABCDEF'
+
+            function randomColorGenerate(){
+                color= '#';
+                for (i=0;i<6;i++){
+                    color=color+cc[low+Math.floor(Math.random()*(high-low+1))];
+                }
+                return color
+            }
+
+            function changeColor(){
+                ele = document.getElementById("dv");
+                c= randomColorGenerate();
+                console.log('color: '+c);
+                ele.style.backgroundColor = c;
+            }
+          
+        </script>
+    </body>
+</html>
